@@ -1,41 +1,44 @@
-Warning
-========
+# causaria-themes
 
-**If you are looking to stand up your own themed edX instance, we
-ask that you not use this theme to base your work off of.  We've
-created (and maintain) an [example theme][ex] that you should use
-instead.**
+# Установка темы lagunita: #
 
-Go here: [https://github.com/Stanford-Online/edx-theme/][ex]
+## Шаг 1 - останавливаем memcached: ##
+>     telnet localhost 11211
+>     flush_all
+>     quit
 
-  [ex]: https://github.com/Stanford-Online/edx-theme/
+## Шаг 2 - клонируем тему в /edx/app/edxapp/themes  ##
+
+>     cd /edx/app/edxapp/themes
+> 
+>     clone https://github.com/causariaLMS/causaria-themes.git
+
+Шаг 3 - прописываем в *lms.env.json* 
+
+ >     "COMPREHENSIVE_THEME_DIRS": [
+>         "/edx/app/edxapp/themes"
+> 
+>     "USE_CUSTOM_THEME":  true
+>  
+>     "THEME_NAME": "lagunita", 
+>  
+>     "DEFAULT_SITE_THEME": "lagunita", 
+
+Шаг 3 - Устраняем ошибки прав доступа
 
 
+> удаляем всё из папки */tmp/mako_lms/*
+> 
+>  удаляем все из *staticfiles* по пути */edx/var/edxapp*
+>  
+>  ставим права для edxapp:edxapp на /edx/app/edxapp/themes/lagunita
+ 
 
-Overview
-========
+Шаг 4 - компилим тему
 
-This directory stores Stanford's theming files for its edX instance.
-We're storing the stuff here and then pulling it in to our instance
-when we deploy.
+>     sudo -H -u edxapp bash
+>     source /edx/app/edxapp/edxapp_env
+>     cd /edx/app/edxapp/edx-platform
+>     paver update_assets lms --settings=aws --themes=lagunita
 
-We've organized the tree to mimic the directory structure of the edX
-codebase so that it's easy to tell where the files will end up upon
-deploy. We'll use a special settings file to set the template and
-staticfiles paths properly to point to these files.
-
-Theme Authoring
-===============
-
-The proposed theming solution for edX provides a number of hooks for
-themes to adjust both HTML and CSS to their liking.
-
-See [this wiki page](https://github.com/edx/edx-platform/wiki/Stanford-Theming) on how to apply the theme.
-
-License
-=======
-
-The code in this repo is licensed under the Apache 2.0 License.
-See [LICENSE.txt](LICENSE.txt) for more info.  The copyright for the
-Stanford brands and assets (e.g. logo and images) are held by Stanford
-University.
+Должно получиться как здесь [http://edrux.ru](http://edrux.ru "EdruX")
