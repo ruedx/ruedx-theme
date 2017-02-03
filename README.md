@@ -1,6 +1,6 @@
-# causaria-themes
+# edruX-themes
 
-# Установка темы lagunita: #
+# Установка темы edruX: #
 
 ## Шаг 1 - останавливаем memcached: ##
 >     telnet localhost 11211
