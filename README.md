@@ -1,6 +1,6 @@
 # ruedX-themes
  
-# Установка темы edruX: #
+# Установка темы ruedX: #
 
 ## Шаг 1 - останавливаем memcached: ##
 =======
@@ -29,9 +29,9 @@
 > 
 >     "USE_CUSTOM_THEME":  true
 >  
->     "THEME_NAME": "edrux", 
+>     "THEME_NAME": "ruedX", 
 >  
->     "DEFAULT_SITE_THEME": "edrux", 
+>     "DEFAULT_SITE_THEME": "ruedX", 
 
  
 Шаг 3 - Устраняем ошибки прав доступа
@@ -41,7 +41,7 @@
 > 
 >  удаляем все из *staticfiles* по пути */edx/var/edxapp*
 >  
->  ставим права для edxapp:edxapp на /edx/app/edxapp/themes/edrux
+>  ставим права для edxapp:edxapp на /edx/app/edxapp/themes/ruedX
  
 
 Шаг 4 - компилим тему
@@ -52,9 +52,9 @@
 >     sudo -H -u edxapp bash
 >     source /edx/app/edxapp/edxapp_env
 >     cd /edx/app/edxapp/edx-platform
->     paver update_assets lms --settings=aws --themes=edrux
+>     paver update_assets lms --settings=aws --themes=ruedX
 
  
-Должно получиться как здесь [http://edrux.ru](http://edrux.ru "EdruX")
+Должно получиться как здесь: [edx.fpkmgppu.ru](Демо: "ruedX")
 =======
  
