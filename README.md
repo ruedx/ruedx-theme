@@ -55,6 +55,6 @@
 >     paver update_assets lms --settings=aws --themes=ruedX
 
  
-Должно получиться как здесь: [edx.fpkmgppu.ru](Демо: "ruedX")
+Должно получиться как здесь: [http://edx.fpkmgppu.ru](Демо: "ruedX")
 =======
  
