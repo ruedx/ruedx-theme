@@ -1,4 +1,4 @@
-# edruX-themes
+# ruedX-themes
  
 # Установка темы edruX: #
 
@@ -18,7 +18,7 @@
 
 >     cd /edx/app/edxapp/themes
 > 
->     clone https://github.com/VladimirAndropov/edrux-theme
+>     clone https://github.com/VladimirAndropov/ruedx-theme
 
  
 Шаг 3 - прописываем в *lms.env.json* 
